@@ -66,7 +66,7 @@ $(LANGUAGE_NAME).pc: bindings/c/$(LANGUAGE_NAME).pc.in
 		-e 's|@CMAKE_INSTALL_PREFIX@|$(PREFIX)|' \
 		-e 's|@TS_REQUIRES@|$(REQUIRES)|' $< > $@
 
-$(PARSER): $(SRC_DIR)/grammar.js
+$(PARSER): $(SRC_DIR)/grammar.json
 	$(TS) generate $^
 
 install: all
